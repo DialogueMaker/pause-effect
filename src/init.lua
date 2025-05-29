@@ -5,9 +5,10 @@
 -- Programmer: Christian Toney
 -- © 2025 Dialogue Maker Group
 
-local DialogueContentFitter = require(script.Parent["dialogue-content-fitter"]);
-local Effect = require(script.Parent.effect);
-local IEffect = require(script.Parent["effect-types"]);
+local packages = script.Parent.roblox_packages;
+local DialogueContentFitter = require(packages.dialogue_content_fitter);
+local Effect = require(packages.effect);
+local IEffect = require(packages.effect_types);
 
 type Bounds = IEffect.Bounds;
 type Effect = IEffect.Effect;
