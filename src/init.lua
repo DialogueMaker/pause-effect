@@ -33,6 +33,7 @@ function PauseEffect.new(timeSeconds: number): Effect
 
     if executionProperties.shouldSkip then
 
+      executionProperties.continuePage();
       return;
       
     end;
