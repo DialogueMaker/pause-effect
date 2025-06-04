@@ -8,13 +8,13 @@
 local packages = script.Parent.roblox_packages;
 local DialogueContentFitter = require(packages.dialogue_content_fitter);
 local Effect = require(packages.effect);
-local IEffect = require(packages.effect_types);
+local DialogueMakerTypes = require(packages.dialogue_maker_types);
 
-type Bounds = IEffect.Bounds;
-type Effect = IEffect.Effect;
-type ContinuePageFunction = IEffect.ContinuePageFunction;
-type ExecutionProperties = IEffect.ExecutionProperties;
-type Page = IEffect.Page;
+type Bounds = DialogueMakerTypes.Bounds;
+type Effect = DialogueMakerTypes.Effect;
+type ContinuePageFunction = DialogueMakerTypes.ContinuePageFunction;
+type ExecutionProperties = DialogueMakerTypes.ExecutionProperties;
+type Page = DialogueMakerTypes.Page;
 
 local PauseEffect = {};
 
