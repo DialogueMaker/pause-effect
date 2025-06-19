@@ -6,7 +6,6 @@
 -- © 2025 Dialogue Maker Group
 
 local packages = script.Parent.roblox_packages;
-local DialogueContentFitter = require(packages.dialogue_content_fitter);
 local Effect = require(packages.effect);
 local DialogueMakerTypes = require(packages.dialogue_maker_types);
 
@@ -19,15 +18,6 @@ type Page = DialogueMakerTypes.Page;
 local PauseEffect = {};
 
 function PauseEffect.new(timeSeconds: number): Effect
-
-  local function fit(self: Effect, contentContainer: GuiObject, textLabel: TextLabel, pages: {Page}): (GuiObject, {Page})
-    
-    -- This effect is just a pause, so we don't need to do anything special to fit it.
-    local newPages = DialogueContentFitter:clonePages(pages);
-    table.insert(newPages[#pages], self);
-    return contentContainer, newPages;
-    
-  end;
 
   local function run(self: Effect, executionProperties: ExecutionProperties)
 
@@ -70,7 +60,6 @@ function PauseEffect.new(timeSeconds: number): Effect
   
   local effect = Effect.new({
     name = "PauseEffect";
-    fit = fit;
     run = run;
   });
 

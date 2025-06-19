@@ -2,7 +2,7 @@
 # It is not intended for manual editing.
 format = 2
 name = "dialoguemaker/pause_effect"
-version = "0.1.0"
+version = "0.1.1"
 target = "roblox"
 
 [graph."0x5eal/unzip@0.1.3 luau".pkg_ref]
@@ -19,55 +19,39 @@ stylua = [{ name = "pesde/stylua", version = "=2.0.2", index = "https://github.c
 ref_ty = "pesde"
 index_url = "https://github.com/daimond113/pesde-index"
 
-[graph."dialoguemaker/dialogue_content_fitter@0.1.0 roblox"]
-direct = ["dialogue_content_fitter", { name = "dialoguemaker/dialogue_content_fitter", version = "^0.1.0", index = "default" }, "standard"]
+[graph."dialoguemaker/effect@0.1.1 roblox"]
+direct = ["effect", { name = "dialoguemaker/effect", version = "^0.1.1", index = "default" }, "standard"]
 
-[graph."dialoguemaker/dialogue_content_fitter@0.1.0 roblox".dependencies]
-dialogue_maker_types = ["dialoguemaker/types@0.1.7 roblox", "standard"]
+[graph."dialoguemaker/effect@0.1.1 roblox".dependencies]
+dialogue_maker_types = ["dialoguemaker/types@0.1.30 roblox", "standard"]
 react = ["wally#jsdotlua/react@17.2.1 roblox", "peer"]
 
-[graph."dialoguemaker/dialogue_content_fitter@0.1.0 roblox".pkg_ref]
+[graph."dialoguemaker/effect@0.1.1 roblox".pkg_ref]
 ref_ty = "pesde"
 index_url = "https://github.com/pesde-pkg/index"
 
-[graph."dialoguemaker/dialogue_content_fitter@0.1.0 roblox".pkg_ref.dependencies]
-dialogue_maker_types = [{ name = "dialoguemaker/types", version = "^0.1.3", index = "https://github.com/pesde-pkg/index" }, "standard"]
+[graph."dialoguemaker/effect@0.1.1 roblox".pkg_ref.dependencies]
+dialogue_maker_types = [{ name = "dialoguemaker/types", version = "^0.1.30", index = "https://github.com/pesde-pkg/index" }, "standard"]
 luau_lsp = [{ name = "pesde/luau_lsp", version = "^1.47.0", index = "https://github.com/pesde-pkg/index", target = "lune" }, "dev"]
 react = [{ wally = "wally#jsdotlua/react", version = "^17.2.1", index = "https://github.com/UpliftGames/wally-index" }, "peer"]
 rojo = [{ name = "pesde/rojo", version = "^7.4.4", index = "https://github.com/pesde-pkg/index", target = "lune" }, "dev"]
 scripts = [{ name = "pesde/scripts_rojo", version = "^0.1.0", index = "https://github.com/pesde-pkg/index", target = "lune" }, "dev"]
 
-[graph."dialoguemaker/effect@0.1.0 roblox"]
-direct = ["effect", { name = "dialoguemaker/effect", version = "^0.1.0", index = "default" }, "standard"]
+[graph."dialoguemaker/types@0.1.30 roblox"]
+direct = ["dialogue_maker_types", { name = "dialoguemaker/types", version = "^0.1.30", index = "default" }, "standard"]
 
-[graph."dialoguemaker/effect@0.1.0 roblox".dependencies]
-dialogue_maker_types = ["dialoguemaker/types@0.1.7 roblox", "standard"]
-react = ["wally#jsdotlua/react@17.2.1 roblox", "peer"]
+[graph."dialoguemaker/types@0.1.30 roblox".dependencies]
+react = ["wally#jsdotlua/react@17.2.1 roblox", "standard"]
+react-roblox = ["wally#jsdotlua/react-roblox@17.2.1 roblox", "standard"]
 
-[graph."dialoguemaker/effect@0.1.0 roblox".pkg_ref]
+[graph."dialoguemaker/types@0.1.30 roblox".pkg_ref]
 ref_ty = "pesde"
 index_url = "https://github.com/pesde-pkg/index"
 
-[graph."dialoguemaker/effect@0.1.0 roblox".pkg_ref.dependencies]
-dialogue_maker_types = [{ name = "dialoguemaker/types", version = "^0.1.7", index = "https://github.com/pesde-pkg/index" }, "standard"]
+[graph."dialoguemaker/types@0.1.30 roblox".pkg_ref.dependencies]
 luau_lsp = [{ name = "pesde/luau_lsp", version = "^1.47.0", index = "https://github.com/pesde-pkg/index", target = "lune" }, "dev"]
-react = [{ wally = "wally#jsdotlua/react", version = "^17.2.1", index = "https://github.com/UpliftGames/wally-index" }, "peer"]
-rojo = [{ name = "pesde/rojo", version = "^7.4.4", index = "https://github.com/pesde-pkg/index", target = "lune" }, "dev"]
-scripts = [{ name = "pesde/scripts_rojo", version = "^0.1.0", index = "https://github.com/pesde-pkg/index", target = "lune" }, "dev"]
-
-[graph."dialoguemaker/types@0.1.7 roblox"]
-direct = ["dialogue_maker_types", { name = "dialoguemaker/types", version = "^0.1.7", index = "default" }, "standard"]
-
-[graph."dialoguemaker/types@0.1.7 roblox".dependencies]
-react = ["wally#jsdotlua/react@17.2.1 roblox", "peer"]
-
-[graph."dialoguemaker/types@0.1.7 roblox".pkg_ref]
-ref_ty = "pesde"
-index_url = "https://github.com/pesde-pkg/index"
-
-[graph."dialoguemaker/types@0.1.7 roblox".pkg_ref.dependencies]
-luau_lsp = [{ name = "pesde/luau_lsp", version = "^1.47.0", index = "https://github.com/pesde-pkg/index", target = "lune" }, "dev"]
-react = [{ wally = "wally#jsdotlua/react", version = "^17.2.1", index = "https://github.com/UpliftGames/wally-index" }, "peer"]
+react = [{ wally = "wally#jsdotlua/react", version = "^17.2.1", index = "https://github.com/UpliftGames/wally-index" }, "standard"]
+react-roblox = [{ wally = "wally#jsdotlua/react-roblox", version = "^17.2.1", index = "https://github.com/UpliftGames/wally-index" }, "standard"]
 rojo = [{ name = "pesde/rojo", version = "^7.4.4", index = "https://github.com/pesde-pkg/index", target = "lune" }, "dev"]
 scripts = [{ name = "pesde/scripts_rojo", version = "^0.1.0", index = "https://github.com/pesde-pkg/index", target = "lune" }, "dev"]
 
@@ -275,6 +259,10 @@ index_url = "https://github.com/UpliftGames/wally-index"
 ref_ty = "wally"
 index_url = "https://github.com/UpliftGames/wally-index"
 
+[graph."wally#jsdotlua/promise@3.5.2 roblox".pkg_ref]
+ref_ty = "wally"
+index_url = "https://github.com/UpliftGames/wally-index"
+
 [graph."wally#jsdotlua/react@17.2.1 roblox"]
 direct = ["react", { wally = "wally#jsdotlua/react", version = "^17.2.1", index = "default" }, "peer"]
 
@@ -287,6 +275,54 @@ ref_ty = "wally"
 index_url = "https://github.com/UpliftGames/wally-index"
 
 [graph."wally#jsdotlua/react@17.2.1 roblox".pkg_ref.dependencies]
+luau-polyfill = [{ wally = "wally#jsdotlua/luau-polyfill", version = ">=1.2.6, <2.0.0", index = "https://github.com/UpliftGames/wally-index" }, "standard"]
+shared = [{ wally = "wally#jsdotlua/shared", version = ">=17.2.1, <18.0.0", index = "https://github.com/UpliftGames/wally-index" }, "standard"]
+
+[graph."wally#jsdotlua/react-reconciler@17.2.1 roblox".dependencies]
+luau-polyfill = ["wally#jsdotlua/luau-polyfill@1.2.7 roblox", "standard"]
+promise = ["wally#jsdotlua/promise@3.5.2 roblox", "standard"]
+react = ["wally#jsdotlua/react@17.2.1 roblox", "standard"]
+scheduler = ["wally#jsdotlua/scheduler@17.2.1 roblox", "standard"]
+shared = ["wally#jsdotlua/shared@17.2.1 roblox", "standard"]
+
+[graph."wally#jsdotlua/react-reconciler@17.2.1 roblox".pkg_ref]
+ref_ty = "wally"
+index_url = "https://github.com/UpliftGames/wally-index"
+
+[graph."wally#jsdotlua/react-reconciler@17.2.1 roblox".pkg_ref.dependencies]
+luau-polyfill = [{ wally = "wally#jsdotlua/luau-polyfill", version = ">=1.2.6, <2.0.0", index = "https://github.com/UpliftGames/wally-index" }, "standard"]
+promise = [{ wally = "wally#jsdotlua/promise", version = ">=3.5.0, <4.0.0", index = "https://github.com/UpliftGames/wally-index" }, "standard"]
+react = [{ wally = "wally#jsdotlua/react", version = ">=17.2.1, <18.0.0", index = "https://github.com/UpliftGames/wally-index" }, "standard"]
+scheduler = [{ wally = "wally#jsdotlua/scheduler", version = ">=17.2.1, <18.0.0", index = "https://github.com/UpliftGames/wally-index" }, "standard"]
+shared = [{ wally = "wally#jsdotlua/shared", version = ">=17.2.1, <18.0.0", index = "https://github.com/UpliftGames/wally-index" }, "standard"]
+
+[graph."wally#jsdotlua/react-roblox@17.2.1 roblox".dependencies]
+luau-polyfill = ["wally#jsdotlua/luau-polyfill@1.2.7 roblox", "standard"]
+react = ["wally#jsdotlua/react@17.2.1 roblox", "standard"]
+react-reconciler = ["wally#jsdotlua/react-reconciler@17.2.1 roblox", "standard"]
+scheduler = ["wally#jsdotlua/scheduler@17.2.1 roblox", "standard"]
+shared = ["wally#jsdotlua/shared@17.2.1 roblox", "standard"]
+
+[graph."wally#jsdotlua/react-roblox@17.2.1 roblox".pkg_ref]
+ref_ty = "wally"
+index_url = "https://github.com/UpliftGames/wally-index"
+
+[graph."wally#jsdotlua/react-roblox@17.2.1 roblox".pkg_ref.dependencies]
+luau-polyfill = [{ wally = "wally#jsdotlua/luau-polyfill", version = ">=1.2.6, <2.0.0", index = "https://github.com/UpliftGames/wally-index" }, "standard"]
+react = [{ wally = "wally#jsdotlua/react", version = ">=17.2.1, <18.0.0", index = "https://github.com/UpliftGames/wally-index" }, "standard"]
+react-reconciler = [{ wally = "wally#jsdotlua/react-reconciler", version = ">=17.2.1, <18.0.0", index = "https://github.com/UpliftGames/wally-index" }, "standard"]
+scheduler = [{ wally = "wally#jsdotlua/scheduler", version = ">=17.2.1, <18.0.0", index = "https://github.com/UpliftGames/wally-index" }, "standard"]
+shared = [{ wally = "wally#jsdotlua/shared", version = ">=17.2.1, <18.0.0", index = "https://github.com/UpliftGames/wally-index" }, "standard"]
+
+[graph."wally#jsdotlua/scheduler@17.2.1 roblox".dependencies]
+luau-polyfill = ["wally#jsdotlua/luau-polyfill@1.2.7 roblox", "standard"]
+shared = ["wally#jsdotlua/shared@17.2.1 roblox", "standard"]
+
+[graph."wally#jsdotlua/scheduler@17.2.1 roblox".pkg_ref]
+ref_ty = "wally"
+index_url = "https://github.com/UpliftGames/wally-index"
+
+[graph."wally#jsdotlua/scheduler@17.2.1 roblox".pkg_ref.dependencies]
 luau-polyfill = [{ wally = "wally#jsdotlua/luau-polyfill", version = ">=1.2.6, <2.0.0", index = "https://github.com/UpliftGames/wally-index" }, "standard"]
 shared = [{ wally = "wally#jsdotlua/shared", version = ">=17.2.1, <18.0.0", index = "https://github.com/UpliftGames/wally-index" }, "standard"]
 
