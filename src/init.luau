@@ -9,21 +9,18 @@ local packages = script.Parent.roblox_packages;
 local Effect = require(packages.effect);
 local DialogueMakerTypes = require(packages.dialogue_maker_types);
 
-type Bounds = DialogueMakerTypes.Bounds;
-type Effect = DialogueMakerTypes.Effect;
-type ContinuePageFunction = DialogueMakerTypes.ContinuePageFunction;
 type ExecutionProperties = DialogueMakerTypes.ExecutionProperties;
-type Page = DialogueMakerTypes.Page;
+type RunEffectFunction = DialogueMakerTypes.RunEffectFunction;
 
 local PauseEffect = {};
 
-function PauseEffect.new(timeSeconds: number): Effect
+function PauseEffect.new(timeSeconds: number)
 
-  local function run(self: Effect, executionProperties: ExecutionProperties)
+  local run: RunEffectFunction = function(self, executionProperties): ()
 
     if executionProperties.shouldSkip then
 
-      executionProperties.continuePage();
+      executionProperties.onCompleted();
       return;
       
     end;
@@ -41,20 +38,16 @@ function PauseEffect.new(timeSeconds: number): Effect
 
     end);
 
-    if executionProperties.skipPageEvent then
+    skipPageThread = task.spawn(function()
+    
+      executionProperties.skipPageSignal:Wait();
+      task.cancel(timeExpiredThread);
+      continueEvent:Fire();
 
-      skipPageThread = task.spawn(function()
-      
-        executionProperties.skipPageEvent.Event:Wait();
-        task.cancel(timeExpiredThread);
-        continueEvent:Fire();
-
-      end);
-      
-    end;
+    end);
 
     continueEvent.Event:Wait();
-    executionProperties.continuePage();
+    executionProperties.onCompleted();
 
   end;
   
